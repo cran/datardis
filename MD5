@@ -1,0 +1,10 @@
+5df364bb1be1b69dec38093b6bf8855b *DESCRIPTION
+dff999c719a14656e715d65817b4305f *LICENSE
+e2867d3d9f376e55863778501ec1322f *NAMESPACE
+8a8dd8a8daffd3535d418e9d4153d34f *NEWS.md
+1a2d5ebeeae5bb5704618ecd3df65d64 *R/datasets.R
+13ff1ab0a6dda4d71afb98591b9db261 *README.md
+9b390b2fbd776ceb64b56697a2202b65 *data/episodes.rda
+23fca526eb730969230d1218a47bde82 *man/episodes.Rd
+f4a64640e15e2b502229d504273689c7 *tests/testthat.R
+3623c1bb9ce1fae0a4536a5b17d75161 *tests/testthat/test-episodes.R
