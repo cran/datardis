@@ -1,22 +1,34 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# datardis
+# datardis <img src="misc/datardis_hex.png" align="right" height="240"/>
 
 <!-- badges: start -->
+
+<img src="https://cranlogs.r-pkg.org/badges/datardis"/><img src="https://cranlogs.r-pkg.org/badges/grand-total/datardis"/><img src="https://www.r-pkg.org/badges/version/datardis"/>
+
 <!-- badges: end -->
 
-The goal of datardis is to provide datasets from the Doctor Who and
-Torchwood TV series.
+The goal of datardis is to provide datasets from the **Doctor Who** and
+**Torchwood** TV shows.
 
-Six datasets are available :  
-**drwho_episodes** : list of all episodes from the Doctor Who revived
-era (2005-present)  
-**drwho_directors** : list of Doctor Who directors  
-**drwho_writers** : list of Doctor Who writers **torchwood_episodes** :
-list of all episodes from the Torchwood series (2006-2011)  
-**torchwood_directors** : list of Torchwood directors  
-**torchwood_writers** : list of Torchwood writers
+Six datasets are available, three for each show:
+
+🎞️ **Dr Who**
+
+- **drwho_episodes**
+
+- **drwho_directors**
+
+- **drwho_writers**
+
+🎞️ **Torchwood**
+
+- **torchwood_episodes**
+
+- **torchwood_directors**
+
+- **torchwood_writers**
 
 ## Installation
 
@@ -36,18 +48,18 @@ devtools::install_github("KittJonathan/datardis")
 ## Examples
 
 ``` r
+
 ## Load packages
 library(datardis)
 library(tidyverse)
 
 ## Find maximum number of UK viewers for Doctor Who (in millions)
 max(drwho_episodes$uk_viewers, na.rm = TRUE)
-#> [1] 13.31
+#> [1] "9.87"
 
 ## Find who wrote the most episodes for Doctor Who
-drwho_writers %>%
-     count(writer) %>%
-     arrange(desc(n)) %>%
+drwho_writers |>
+     count(writer, sort = TRUE) |>
      head(5)
 #> # A tibble: 5 × 2
 #>   writer               n
@@ -59,9 +71,8 @@ drwho_writers %>%
 #> 5 Toby Whithouse       7
 
 ## Find who directed the most episodes for Doctor Who
-drwho_directors %>%
-     count(director) %>%
-     arrange(desc(n)) %>%
+drwho_directors |>
+     count(director, sort = TRUE) |>
      head(5)
 #> # A tibble: 5 × 2
 #>   director               n
@@ -72,3 +83,9 @@ drwho_directors %>%
 #> 4 Jamie Magnus Stone     8
 #> 5 James Strong           7
 ```
+
+## News: datardis v.0.0.4
+
+- added last Dr Who episodes (2022 specials)
+
+- replaced `%>%` pipe with `|>` pipe in examples
